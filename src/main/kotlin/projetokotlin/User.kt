@@ -8,6 +8,16 @@ class User(nome: String, email: String, senha: String, cpf: String, tel: String)
     var listProdutos =
         listOf<String>("1-Camiseta = 5 pontos", "2-Boné = 4 pontos", "3-Vouncher15% = 6 pontos", "4-Caneca = 3 pontos")
 
+    override fun infoApp() {
+        println("***SOBRE O APLICATIVO***")
+        println(
+            "O aplicativo consiste em um e-commerce de recolhimento de notas fiscais, com o intuito de arrecadar" +
+                    "fundos, através do recolhimento de imposto das mesmas, ao qual são destinadas a ONG,que por sua vez" +
+                    "irá usar esse valor para medidas que mitiguem e combatam a insegurança alimentar e a fome em áreas vulneráveis" +
+                    " o cliente que doar a nota fiscal recebe pontos no qual pode trocar por produtos ou voucher de descontos"
+        )
+    }
+
     override fun cadastroUser() {
         print("Me informe seu nome compeleto: ")
         nome = readln()
@@ -19,19 +29,24 @@ class User(nome: String, email: String, senha: String, cpf: String, tel: String)
         cpf = readln()
         print("Me informe o seu telefone:")
         tel = readln()
+        print("Cadastro efetuado com sucesso!" +
+                "Faça o login")
     }
 
     override fun loginUser() {
-        println("Digite seu e-mail:")
-        email = readln()
-        println("Informe sua senha:")
-        senha = readln()
 
+        while (true) {
+            println("Digite seu e-mail:")
+            email = readln()
+            println("Informe sua senha:")
+            senha = readln()
+            if (email != "raian.guilherme@gmail.com" && senha != "1234")
+                println("E-mail ou senha incorreto!")
+            else {
+                println("Login efetuado com sucesso")
+                break
+            }
 
-        if (email != "raian.guilherme@gmail.com" && senha != "kkkk")
-            println("E-mail ou senha incorreto!")
-        else {
-            println("Login efetuado com sucesso")
         }
 
     }
@@ -70,53 +85,50 @@ class User(nome: String, email: String, senha: String, cpf: String, tel: String)
         }
 
 
-       try {
-           println("Escolha por qual produto deseja trocar seus pontos:")
-           var aux1 = readln().toInt()
-           when (aux1) {
-               1 -> {
-                   if (saldo < 5) {
-                       println("Você não tem pontos o suficiente")
-                       println(saldo)
-                   } else {
-                       saldo -= 5
-                       println("Camiseta resgatada com sucesso")
-                       println("Seu saldo é:$saldo")
-                   }
-               }
-               2 -> {
-                   if (saldo < 4) {
-                       println("Você não tem pontos o suficiente")
-                       println(saldo)
-                   } else {
-                       saldo -= 4
-                       println("Boné resgatado com sucesso")
-                       println("Seu saldo é:$saldo")
-                   }
+        println("Escolha por qual produto deseja trocar seus pontos:")
+        var aux1 = readln().toInt()
+        when (aux1) {
+            1 -> {
+                if (saldo < 5) {
+                    println("Você não tem pontos o suficiente")
+                    println(saldo)
+                } else {
+                    saldo -= 5
+                    println("Camiseta resgatada com sucesso")
+                    println("Seu saldo é:$saldo")
+                }
+            }
+            2 -> {
+                if (saldo < 4) {
+                    println("Você não tem pontos o suficiente")
+                    println(saldo)
+                } else {
+                    saldo -= 4
+                    println("Boné resgatado com sucesso")
+                    println("Seu saldo é:$saldo")
+                }
 
-               }
-               3 -> {
-                   if (saldo > 6) {
-                       println("Você não tem pontos o suficiente")
-                       println(saldo)
-                   } else {
-                       saldo -= 6
-                       println("Vouncher resgatado com sucesso")
-                       println("Seu saldo é:$saldo")
-                   }
-               }
-               4 -> {
-                   if (saldo > 3) {
-                       println("Caneca resgatada com sucesso")
-                       println("Seu saldo é:$saldo")
-                   }
-               }
-           }
-       }catch
-           println("Opção inválida!")
-       }
+            }
+            3 -> {
+                if (saldo > 6) {
+                    println("Você não tem pontos o suficiente")
+                    println(saldo)
+                } else {
+                    saldo -= 6
+                    println("Vouncher resgatado com sucesso")
+                    println("Seu saldo é:$saldo")
+                }
+            }
+            4 -> {
+                if (saldo > 3) {
+                    println("Caneca resgatada com sucesso")
+                    println("Seu saldo é:$saldo")
+                }
+            }
+            else -> println("Opção inválida!!\n")
+        }
+    }
+}
 
-    }
-    }
 
 

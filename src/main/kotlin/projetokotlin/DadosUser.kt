@@ -23,6 +23,8 @@ open abstract class DadosUser(
 
 abstract fun listarProdutos()
 
+abstract fun infoApp()
+
 
 }
 
