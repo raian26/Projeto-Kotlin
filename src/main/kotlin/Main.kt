@@ -23,7 +23,9 @@ fun main(){
             "1-Doar NF\n" +
             "2-Ver produtos\n" +
             "3-Consultar seu saldo de pontos:\n" +
-            "4-Resgatar produtos\n")
+            "4-Resgatar produtos\n" +
+            "5-Informações sobre o app\n" +
+            "6-Deslogar")
           var aux= readln().toInt()
 
        when (aux) {
@@ -44,11 +46,15 @@ fun main(){
                println()
            }
            4->{
-               user1.trocarProduto()
+               user1.resgatarProduto()
            }
+           5->{
+               println("Informações do App")
+           }
+           6-> println("Até mais!!")
 
        }
-   }while(aux!=7)
+   }while(aux!=6)
 
     }
 

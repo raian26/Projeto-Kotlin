@@ -16,11 +16,13 @@ open abstract class DadosUser(
 
     abstract fun doarNota()
 
-    abstract fun trocarProduto()
+    abstract fun resgatarProduto()
 
 
   abstract fun mostrarSaldopontos()
 
 abstract fun listarProdutos()
+
+
 }
 
