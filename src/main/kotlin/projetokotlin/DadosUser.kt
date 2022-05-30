@@ -1,6 +1,6 @@
 package projetokotlin
 
-open abstract class DadosUser(
+abstract class DadosUser(
     var nome:String,
     var email:String,
     var senha:String,

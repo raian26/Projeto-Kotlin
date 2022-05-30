@@ -7,10 +7,11 @@ import org.junit.jupiter.api.Assertions.*
 internal class UserTest {
 
     @Test
-    fun getSaldo() {
+    fun saldoTest() {
+        assertEquals(0, User.soma)
     }
 
     @Test
-    fun getNumeroNf() {
+    fun numeroNfTest() {
     }
 }

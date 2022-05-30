@@ -54,7 +54,7 @@ class User(nome: String, email: String, senha: String, cpf: String, tel: String)
     override fun doarNota() {
         println("Informe o código da NF que deseja doar:")
         numeroNf = readln()
-        if (numeroNf.length == 3) {
+        if (numeroNf.length == 19) {
             println("Sua nota será analisada e validada!")
             saldo++
             listNF.add(numeroNf)
@@ -90,38 +90,38 @@ class User(nome: String, email: String, senha: String, cpf: String, tel: String)
         when (aux1) {
             1 -> {
                 if (saldo < 5) {
-                    println("Você não tem pontos o suficiente")
+                    println("Você não tem pontos o suficiente\n")
                     println(saldo)
                 } else {
                     saldo -= 5
-                    println("Camiseta resgatada com sucesso")
+                    println("Camiseta resgatada com sucesso\n")
                     println("Seu saldo é:$saldo")
                 }
             }
             2 -> {
                 if (saldo < 4) {
-                    println("Você não tem pontos o suficiente")
+                    println("Você não tem pontos o suficiente\n")
                     println(saldo)
                 } else {
                     saldo -= 4
-                    println("Boné resgatado com sucesso")
-                    println("Seu saldo é:$saldo")
+                    println("Boné resgatado com sucesso\n")
+                    println("Seu saldo é:$saldo\n")
                 }
 
             }
             3 -> {
                 if (saldo > 6) {
-                    println("Você não tem pontos o suficiente")
+                    println("Você não tem pontos o suficiente\n")
                     println(saldo)
                 } else {
                     saldo -= 6
-                    println("Vouncher resgatado com sucesso")
-                    println("Seu saldo é:$saldo")
+                    println("Vouncher resgatado com sucesso\n")
+                    println("Seu saldo é:$saldo\n")
                 }
             }
             4 -> {
                 if (saldo > 3) {
-                    println("Caneca resgatada com sucesso")
+                    println("Caneca resgatada com sucesso\n")
                     println("Seu saldo é:$saldo")
                 }
             }
