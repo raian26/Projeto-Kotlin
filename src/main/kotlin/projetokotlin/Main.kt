@@ -1,4 +1,5 @@
 import projetokotlin.User
+
 //Por falta de banco de dados o usuario já está cadastrado com e-mail raian.guilherme@gmailcom
 // e senha 1234
 //para fazer o login utilize, ou modifique na class
@@ -25,7 +26,7 @@ fun main() {
         }
     }
     do {
-        println("Bem vindo ao app Fome Zero")
+        println("Not + Hungry\n")
         println(
             "Informe o que deseja fazer\n" +
                     "1-Doar NF\n" +
@@ -64,7 +65,7 @@ fun main() {
                 println("Até mais!!")
             }
             else -> {
-                println("Opção inválida!")
+                println("Opção inválida!\n")
             }
         }
     } while (aux != 6)
